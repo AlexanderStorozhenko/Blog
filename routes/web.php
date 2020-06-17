@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('job');
 });
+
+Route::group(['prefix' => 'articles'], function (){
+   Route::get('/',"ArticleController@index");
+    Route::get('/{id}',"ArticleController@article");
+});

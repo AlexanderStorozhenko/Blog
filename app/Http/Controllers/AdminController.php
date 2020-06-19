@@ -31,6 +31,7 @@ class AdminController extends Controller
         if(!Auth::check()) {
             return redirect("/admin/login");
         }
+        return view("admin.admin-articles");
 
     }
 

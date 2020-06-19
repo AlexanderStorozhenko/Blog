@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 class ArticleRepository {
 
     public function getArticleContentById($id){
-        return Article::select("*");
+        return Article::find($id);
     }
     /** @return Collection **/
     public function getAllArticles(){

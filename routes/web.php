@@ -21,3 +21,11 @@ Route::group(['prefix' => 'articles'], function (){
    Route::get('/',"ArticleController@index");
     Route::get('/{id}',"ArticleController@article");
 });
+
+
+Route::group(['prefix' => 'admin'], function (){
+    Route::get('/',"AdminController@index");
+    Route::get('/login',"AdminController@login");
+    Route::post('/auth',"AdminController@auth");
+});
+

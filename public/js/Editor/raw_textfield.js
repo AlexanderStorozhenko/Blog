@@ -36,20 +36,20 @@ save.click(function () {
 
 });
 refresh.click(function () {
-    // send("/api/editor/article/refresh",textarea.val());
+
     let send = async function() {
         await $.ajax({
-            method: "POST", // метод HTTP, используемый для запроса
-            url: "/api/editor/article/refresh", // строка, содержащая URL адрес, на который отправляется запрос
-            data: { // данные, которые будут отправлены на сервер
+            method: "POST",
+            url: "/api/editor/article/refresh",
+            data: {
                 raw: textarea.val(),
 
             },
             headers:{
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            success: function ( msg ) { // функции обратного вызова, которые вызываются если AJAX запрос выполнится успешно (если несколько функций, то необходимо помещать их в массив)
-                resultArea.html(JSON.parse(msg).content);  // добавляем текстовую информацию и данные возвращенные с сервера
+            success: function ( msg ) {
+                resultArea.html(JSON.parse(msg).content);
             }});
     }
     let data =  send();

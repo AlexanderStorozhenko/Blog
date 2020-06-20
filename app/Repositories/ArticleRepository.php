@@ -22,8 +22,8 @@ class ArticleRepository {
 
     }
     /** @return Collection **/
-    public function getAllArticles(){
-        return Article::select("*")->toBase()->get();
+    public function getAll(){
+        return Article::select("*")->limit(100)->toBase()->get();
     }
 //    public function get($data){
 //        return Article::insert($data)->toBase()->get();

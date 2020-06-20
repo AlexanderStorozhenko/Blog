@@ -23,9 +23,7 @@
 
 
         </div>
-        <textarea class="raw-content-box__textarea">
-            {{$raw ?? ''}}
-            </textarea>
+        <textarea class="raw-content-box__textarea">{{$raw ?? ''}}</textarea>
     </div>
     <div class="result-content-box">
         <div class="result-content-box__tools">

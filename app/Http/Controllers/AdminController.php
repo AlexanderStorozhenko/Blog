@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminRequest;
 use App\Http\Requests\AuthRequest;
+use App\Repositories\ArticleRepository;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,12 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    private $articleRepository;
+    public function __construct()
+    {
+        $this->articleRepository = new ArticleRepository();
+    }
+
     public function auth(AuthRequest $request)
     {
         $credentials = $request->only("email","password");
@@ -28,11 +35,12 @@ class AdminController extends Controller
 
     public function index(AdminRequest $request)
     {
-//        Auth::logout();
         if(!Auth::check()) {
             return redirect("/admin/login");
         }
-        return view("admin.home");
+        $articles =  $this->articleRepository->getAll();
+
+        return view("admin.home",compact('articles'));
 
     }
 

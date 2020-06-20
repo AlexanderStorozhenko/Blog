@@ -4,8 +4,8 @@
 <header class="header">
 
     <div class="header__text">
-        <div class="header__title">Вход в админ-панель</div>
-
+        <div class="header__title">{{$title ?? ''}}</div>
+        <a href="/admin/logout">выйти</a>
     </div>
 
 </header>

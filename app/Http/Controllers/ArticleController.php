@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdminRequest;
 use App\Repositories\ArticleRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class ArticleController extends Controller
 {
     private $articleRepository;
@@ -27,4 +30,5 @@ class ArticleController extends Controller
 
         return view('article',compact('content'));
     }
+
 }

@@ -2,6 +2,7 @@
 <header class="header">
     <div class="header__text">
         <div class="header__title">Админ панель</div>
+        <a href="/admin/logout">выйти</a>
     </div>
 </header>
 <body>
@@ -16,7 +17,7 @@
                     <input class="search-panel__input" type="text" placeholder="Поиск"/>
                     <a class="search-panel__btn"><i class="fas fa-search"></i></a>
                 </div>
-                <a class="btn-submit"><span class="btn-submit__span">+</span> Добавить</a>
+                <a href="/admin/article/add" class="btn-submit"><span class="btn-submit__span">+</span> Добавить</a>
             </div>
         </div>
         <div class="admin-content">

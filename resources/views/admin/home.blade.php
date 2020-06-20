@@ -20,7 +20,7 @@
     </div>
     <div href="#" class="admin-article-link">
 
-        <a class="admin-article-link__link" href="#">
+        <a class="admin-article-link__link" href="/admin/article/change/1">
             <div class="admin-article-link__link__title">LINQ</div>
             <div class="admin-article-link__link__text">
                 Удобная работа с множествами

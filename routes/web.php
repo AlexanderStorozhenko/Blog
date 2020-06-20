@@ -22,10 +22,17 @@ Route::group(['prefix' => 'articles'], function (){
     Route::get('/{id}',"ArticleController@article");
 });
 
-
+Route::group(['prefix' => 'api'], function (){
+    Route::post('/editor/article/save',"EditorController@save");
+    Route::post('/editor/article/refresh',"EditorController@refresh");
+});
 Route::group(['prefix' => 'admin'], function (){
     Route::get('/',"AdminController@index");
-    Route::get('/login',"AdminController@login");
+    Route::get('/login',"AdminController@login")->name("admin.login");
+    Route::get('/logout',"AdminController@logout")->name("admin.logout");
     Route::post('/auth',"AdminController@auth");
+
+    Route::middleware("auth")->get('/article/add',"EditorController@add");
+    Route::middleware("auth")->get('/article/change/{id}',"EditorController@change");
 });
 

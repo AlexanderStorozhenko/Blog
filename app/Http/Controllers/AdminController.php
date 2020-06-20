@@ -28,22 +28,30 @@ class AdminController extends Controller
 
     public function index(AdminRequest $request)
     {
+//        Auth::logout();
         if(!Auth::check()) {
             return redirect("/admin/login");
         }
-        return view("admin.admin-articles");
+        return view("admin.home");
 
     }
 
-
+    public function logout()
+    {
+        Auth::logout();
+        return redirect("/admin/login");
+    }
     public function login(AdminRequest $request)
     {
-        //Auth::logout();
+
         if(Auth::check())
             return redirect("/admin");
 
-        return view("admin.login");
+        $title = "Вход в админ панель";
+        return view("/admin/login", compact('title'));
     }
+
+
 
 
 }

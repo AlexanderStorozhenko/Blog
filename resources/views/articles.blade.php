@@ -1,9 +1,14 @@
-@extends('layouts.app')
+@php($selected = ["articles"=>"selected"])
+@extends('layouts.app',$selected)
 
 @section('content')
 
+    @if($articleList->count() == 0)
+        <h3>Ничего не найдено</h3>
+    @endif
+
     @foreach($articleList as $article)
-        <a href="/articles/1" class="article-link">
+        <a href="/articles/{{$article->id}}" class="article-link">
             <div class="article-link__title">
                 {{$article->name}}
             </div>
@@ -13,4 +18,8 @@
         </a>
     @endforeach
 
+@endsection
+
+@section('sidebar')
+    @include('sidebars.filter_sidebar')
 @endsection

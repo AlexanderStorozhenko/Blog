@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Http\Requests\AdminRequest;
 use App\Http\Requests\EditorRequest;
 use App\Repositories\ArticleRepository;
@@ -19,7 +20,8 @@ class EditorController extends Controller
     public function add()
     {
         $title = "Редактор статьи";
-        return view("admin.editor", compact('title'));
+        $id = $this->articleRepository->getNewId();
+        return view("admin.editor", compact('id','title'));
     }
     public function change($id)
     {
@@ -27,17 +29,25 @@ class EditorController extends Controller
         $article = $this->articleRepository->getArticleById($id);
         $raw = $article->raw_content;
         $content = $article->content;
-
-        return view("admin.editor", compact('title','raw','content'));
+        $article_title = $article->name;
+        $article_text = $article->text;
+        $id = $article->id;
+        return view("admin.editor", compact('title',
+            'article_title',
+            'article_text','id','raw','content'));
     }
 
 
     //post
     public function save(EditorRequest $request)
     {
-
-        return "ok";
-
+        $raw = $request->input("raw");
+        $name = $request->input("title");
+        $text = $request->input("text");
+        $id = $request->input("id");
+      if(isset($raw))
+          (new Article)->Add($id,$name,$raw,$text);
+        return json_encode(['success'=>true]);
     }
     //post
     public function refresh(EditorRequest $request)

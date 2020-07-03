@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="markdown">
-        @parsedown($content)
+         @parsedown($content)
     </div>
 @endsection

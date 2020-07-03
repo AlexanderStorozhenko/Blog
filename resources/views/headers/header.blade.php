@@ -12,12 +12,12 @@
                 <div class="header__subtitles__subtitle__glitch-blue">web development</div>
 
             </div>
-{{--            <div class="header__subtitles__subtitle">--}}
-{{--                <div class="header__subtitles__subtitle__glitch-black">software engineering</div>--}}
-{{--                <div class="header__subtitles__subtitle__glitch-violet">software engineering</div>--}}
-{{--                <div class="header__subtitles__subtitle__glitch-blue">software engineering</div>--}}
-{{--           --}}
-{{--            </div>--}}
+            <div class="header__subtitles__subtitle">
+                <div class="header__subtitles__subtitle__glitch-black">software engineering</div>
+                <div class="header__subtitles__subtitle__glitch-violet">software engineering</div>
+                <div class="header__subtitles__subtitle__glitch-blue">software engineering</div>
+
+            </div>
 
         </div>
     </div>

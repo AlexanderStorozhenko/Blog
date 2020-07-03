@@ -17,7 +17,7 @@
                     <input class="search-panel__input" type="text" placeholder="Поиск"/>
                     <a class="search-panel__btn"><i class="fas fa-search"></i></a>
                 </div>
-                <a href="/admin/article/add" class="btn-submit"><span class="btn-submit__span">+</span> Добавить</a>
+                <a href="/admin/article/add" class="btn"><span class="btn__span">+</span> Добавить</a>
             </div>
         </div>
         <div class="admin-content">

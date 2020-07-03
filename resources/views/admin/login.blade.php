@@ -12,6 +12,6 @@
         @if(!empty($errors) && $errors->count()>0)
             <p class="admin-login-form__error">{{$errors->first()}}</p>
         @endif
-        <input class="admin-login-form__submit btn-submit"  type="submit" value="Войти"/>
+        <input class="admin-login-form__submit btn"  type="submit" value="Войти"/>
     </form>
 </div>
